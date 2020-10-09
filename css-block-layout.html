@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: black;
+      width: 100%;
+      min-width: 600px;
+    }
+
+    header div {
+      width: 600px;
+      color: white;
+      margin: 0 auto;
+    }
+
+    header+div {
+      margin: 16px auto;
+      width: 600px;
+    }
+
+    .nav {
+      margin: 0 auto;
+      width: 600px;
+      margin-bottom: 240px;
+    }
+
+    .nav li {
+      list-style: none;
+      box-sizing: border-box;
+      width: 180px;
+      height: 40px;
+      border: 3px solid black;
+      margin: 15px 0 15px 0;
+      background-color: pink;
+      text-align: center;
+    }
+
+    .nav li:hover {
+      background-color: red;
+    }
+
+    .nav li:nth-child(n+5) {
+      margin-left: 210px;
+    }
+
+    .nav li:nth-child(4n) {
+      margin-bottom: -220px;
+    }
+
+    .nav li:nth-child(n+9) {
+      margin-left: 420px;
+    }
+
+    .nav2 {
+      width: 600px;
+      margin: 0 auto;
+      font-size: 0;
+    }
+
+    .nav2 li {
+      font-size: 16px;
+      list-style: none;
+      box-sizing: border-box;
+      width: 180px;
+      height: 40px;
+      border: 3px solid black;
+      margin: 0 30px 15px 0;
+      background-color: pink;
+      text-align: center;
+      display: inline-block;
+    }
+
+    .nav2 li:hover {
+      background-color: red;
+    }
+
+    .nav2 li:nth-child(3n) {
+      margin-right: 0;
+    }
+
+    .link-style {
+      width: 600px;
+      margin: 0 auto;
+      box-sizing: border-box;
+      border: 1px dotted transparent;
+      border-bottom-color: black;
+    }
+
+    .link-style.link-last {
+      border-bottom-color: transparent;
+    }
+
+    footer {
+      width: 100%;
+      min-width: 600px;
+      background-color: violet;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div>hello world 请调整浏览器窗口大小查看效果</div>
+  </header>
+  <div>
+    页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px
+    页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px
+  </div>
+  <div class="nav">
+    <ul>
+      <li>宽180高40(包含边框)</li>
+      <li>水平间隙30px</li>
+      <li>垂直间隙15px</li>
+      <li>边框宽度3px</li>
+      <li>产品</li>
+      <li>产品</li>
+      <li>产品</li>
+      <li>产品</li>
+      <li>产品</li>
+      <li>产品</li>
+      <li>产品</li>
+      <li>产品</li>
+    </ul>
+  </div>
+  <hr>
+  <div class="nav2">
+    <ul>
+      <li>宽180高40(包含边框)</li>
+      <li>产品</li>
+      <li>产品</li>
+      <li>水平间隙30px</li>
+      <li>产品</li>
+      <li>产品</li>
+      <li>垂直间隙15px</li>
+      <li>产品</li>
+      <li>产品</li>
+      <li>边框宽度3px</li>
+      <li>产品</li>
+      <li>产品</li>
+    </ul>
+  </div>
+  <p class="link-style">link</p>
+  <p class="link-style">link</p>
+  <p class="link-style">link</p>
+  <p class="link-style">link</p>
+  <p class="link-style link-last">link</p>
+  <footer>
+    <div>©版权所有</div>
+    <div>本页所有布局均使用块元素</div>
+  </footer>
+</body>
+
+</html>

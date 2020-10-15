@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    nav {
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    div {
+      margin: 30px auto;
+      width: 300px;
+      height: 300px;
+      position: relative;
+    }
+
+    div img {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 30px;
+      left: 0;
+      opacity: 0;
+      transition: 2s;
+    }
+
+    input:nth-child(1):checked~div img:nth-child(1),
+    input:nth-child(2):checked~div img:nth-child(2),
+    input:nth-child(3):checked~div img:nth-child(3),
+    input:nth-child(4):checked~div img:nth-child(4),
+    input:nth-child(5):checked~div img:nth-child(5) {
+      opacity: 1;
+      z-index: 10;
+    }
+  </style>
+</head>
+
+<body>
+  <input type="radio" name="a" id="">
+  <input type="radio" name="a" id="">
+  <input type="radio" name="a" id="">
+  <input type="radio" name="a" id="">
+  <input type="radio" name="a" id="">
+
+  <div>
+    <img src="https://homer.dl.playstation.net/pr/bam-art/105/179/f593623f-5989-482c-95cd-fc5bef5a0e05.jpg" alt="">
+    <img src="https://homer.dl.playstation.net/pr/bam-art/110/224/2e42bb4c-5910-481c-882c-c8e0ebd3e422.png" alt="">
+    <img src="https://homer.dl.playstation.net/pr/bam-art/109/859/7eeaf1ba-cfe7-4e46-a6e2-e0da1adbd428.jpg" alt="">
+    <img src="https://homer.dl.playstation.net/pr/bam-art/110/382/394f233f-14d1-4967-8989-bf2fff5316e2.png" alt="">
+    <img src="https://homer.dl.playstation.net/pr/bam-art/109/421/f9262ec4-46ce-495a-936e-f0e407b27cc7.jpg" alt="">
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-shadow: 0 0 1px red;
+      list-style: none;
+    }
+
+    .nav {
+      width: 80%;
+      margin: 0 auto;
+      font-size: 0;
+    }
+
+    .nav>ul>li {
+      display: inline-block;
+      font-size: 16px;
+      margin-right: 30px;
+      position: relative;
+    }
+
+    .nav>ul>li>ul {
+      position: absolute;
+      display: none;
+      top: 100%;
+      left: 0;
+      font-size: 16px;
+    }
+
+    .nav>ul>li:hover>ul {
+      display: block;
+    }
+
+    .nav>ul>li li {
+      position: relative;
+    }
+
+    .nav>ul>li>ul ul {
+      position: absolute;
+      display: none;
+      top: 0;
+      left: 100%;
+      font-size: 16px;
+    }
+
+    .nav>ul>li li:hover>ul {
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="nav">
+    <ul>
+      <li>
+        首页
+        <ul>
+          <li>123
+            <ul>
+              <li>aaa</li>
+              <li>dsd</li>
+              <li>asdad
+                <ul>
+                  <li>aaa</li>
+                  <li>dsd</li>
+                  <li>asdad</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>22dsfsd2
+            <ul>
+              <li>aaa</li>
+              <li>dsd</li>
+              <li>asdad</li>
+            </ul>
+          </li>
+          <li>312
+
+          </li>
+        </ul>
+      </li>
+      <li>
+        ssssss
+        <ul>
+          <li>123</li>
+          <li>22dsfsd2
+            <ul>
+              <li>aaa</li>
+              <li>dsd</li>
+              <li>asdad</li>
+            </ul>
+          </li>
+          <li>312</li>
+        </ul>
+      </li>
+      <li>dasdadas
+        <ul>
+          <li>123</li>
+          <li>22dsfsd2</li>
+          <li>312
+            <ul>
+              <li>aaa</li>
+              <li>dsd</li>
+              <li>asdad</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>aa
+        <ul>
+          <li>123</li>
+          <li>22dsfsd2</li>
+          <li>312
+            <ul>
+              <li>aaa</li>
+              <li>dsd</li>
+              <li>asdad</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>sdadsa
+        <ul>
+          <li>123</li>
+          <li>22dsfsd2
+            <ul>
+              <li>aaa</li>
+              <li>dsd</li>
+              <li>asdad</li>
+            </ul>
+          </li>
+          <li>312</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</body>
+
+</html>

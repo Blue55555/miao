@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    input {
+      display: none;
+    }
+
+    .track {
+      xborder: 1px solid gray;
+      width: 100px;
+      height: 50px;
+      background-color: white;
+      border-radius: 50px;
+      transition: 0.5s;
+      font-size: 0;
+      overflow: hidden;
+      box-shadow: 0 0 2px gray;
+
+    }
+
+    .round {
+      width: 45px;
+      height: 45px;
+      background-color: white;
+      border-radius: 45px;
+      transition: 0.5s;
+      margin-top: 2px;
+      margin-left: 2px;
+      box-shadow: 0 5px 10px gray;
+    }
+
+    input:checked~label>.track>.round {
+      margin-left: 52px;
+      box-shadow: initial;
+    }
+
+    input:checked~label>.track {
+      background-color: chartreuse;
+      border: 0;
+    }
+
+    img {
+      margin-top: 10px;
+      opacity: 0;
+      margin-left: -235px;
+      transition: 0.5s;
+    }
+
+    input:checked~img {
+      opacity: 1;
+      margin-left: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="Elizabeth-botton">
+    <input type="checkbox" name="a" id="a">
+    <label for="a">
+      <div class="track">
+        <div class="round"></div>
+      </div>
+    </label>
+    <img
+      src="https://bkimg.cdn.bcebos.com/pic/fd039245d688d43f1ab88e52751ed21b0ef43b78?x-bce-process=image/resize,m_lfit,w_235,h_235,limit_1"
+      alt="">
+  </div>
+</body>
+
+</html>

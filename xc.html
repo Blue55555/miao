@@ -6,22 +6,79 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
-    div {
-      background-color: red;
-      width: 200px;
-      height: 200px;
-      transition: 3s;
+    table,
+    td {
+      border: 3px solid blue;
+      border-collapse: collapse;
     }
 
-    div:hover {
-      margin-left: 800px;
-      font-size: 50px;
+    table {
+      width: 200px;
+      overflow: hidden;
+      margin: 0 auto;
+    }
+
+    td {
+      position: relative;
+      line-height: 100px;
+      text-align: center;
+    }
+
+    tr:hover {
+      background-color: red;
+    }
+
+    td:hover:after {
+      content: "";
+      position: absolute;
+      top: -999999px;
+      left: 0;
+      right: 0;
+      bottom: -99999px;
+      background-color: red;
+      z-index: -9;
     }
   </style>
 </head>
 
 <body>
-  <div></div>
+  <table>
+    <tr>
+      <td>aa</td>
+      <td>aa</td>
+      <td>aa</td>
+    </tr>
+    <tr>
+      <td>bb</td>
+      <td>bb</td>
+      <td>bb</td>
+    </tr>
+    <tr>
+      <td>cc</td>
+      <td>cc</td>
+      <td>cc</td>
+    </tr>
+    <tr>
+      <td>dd</td>
+      <td>dd</td>
+      <td>dd</td>
+    </tr>
+    <tr>
+      <td>ee</td>
+      <td>ee</td>
+      <td>ee</td>
+    </tr>
+    <tr>
+      <td>ff</td>
+      <td>ff</td>
+      <td>ff</td>
+    </tr>
+    <tr>
+      <td>gg</td>
+      <td>gg</td>
+      <td>gg</td>
+    </tr>
+  </table>
 </body>
 
 </html>

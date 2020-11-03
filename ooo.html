@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .layout1 {
+      list-style: none;
+      width: 210px;
+      border: 1px solid black;
+      overflow: hidden;
+      margin: auto;
+    }
+
+    .layout1 li {
+      box-sizing: border-box;
+      border: 1px solid black;
+      width: 50px;
+      height: 50px;
+      margin: 10px;
+      float: left;
+    }
+
+    .layout1 li:nth-child(4) {
+      width: 120px;
+      height: 120px;
+    }
+
+    .layout1 li:nth-child(10) {
+      width: 120px;
+      height: 120px;
+    }
+
+    .layout1 li:nth-child(n+10) {
+      float: right;
+    }
+
+    .layout2 {
+      list-style: none;
+      width: 280px;
+      border: 1px solid black;
+      overflow: hidden;
+      margin: 20px auto;
+    }
+
+    .layout2 li {
+      box-sizing: border-box;
+      border: 1px solid black;
+      width: 50px;
+      height: 50px;
+      margin: 10px;
+      float: left;
+    }
+
+    .layout2 li:first-child {
+      width: 50px;
+      height: 120px;
+    }
+
+    .layout2 li:nth-child(n+7) {
+      height: 15px;
+    }
+  </style>
+</head>
+
+<body>
+  <ul class="layout1">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+
+  <ul class="layout2">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+</body>
+
+</html>

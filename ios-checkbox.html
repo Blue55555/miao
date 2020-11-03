@@ -6,41 +6,49 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
+    .Elizabeth-botton {
+      display: inline-block;
+      margin: 0 auto;
+    }
+
     input {
       display: none;
     }
 
     .track {
+      box-sizing: border-box;
       xborder: 1px solid gray;
       width: 100px;
       height: 50px;
       background-color: white;
       border-radius: 50px;
-      transition: 0.5s;
+      transition: 1s;
       font-size: 0;
       overflow: hidden;
-      box-shadow: 0 0 2px gray;
-
+      border: 1px solid #CBC7CA;
     }
 
-    .round {
+    label {
+      display: block;
       width: 45px;
       height: 45px;
       background-color: white;
       border-radius: 45px;
-      transition: 0.5s;
+      transition: 1s;
       margin-top: 2px;
       margin-left: 2px;
       box-shadow: 0 5px 10px gray;
     }
 
-    input:checked~label>.track>.round {
+    input:checked~.track>label {
       margin-left: 52px;
       box-shadow: initial;
     }
 
-    input:checked~label>.track {
+    input:checked~.track {
       background-color: chartreuse;
+      box-shadow: 0 0 0 20px chartreuse inset;
+      border-color: #30F349;
       border: 0;
     }
 
@@ -61,11 +69,9 @@
 <body>
   <div class="Elizabeth-botton">
     <input type="checkbox" name="a" id="a">
-    <label for="a">
-      <div class="track">
-        <div class="round"></div>
-      </div>
-    </label>
+    <div class="track">
+      <label for="a"></label>
+    </div>
     <img
       src="https://bkimg.cdn.bcebos.com/pic/fd039245d688d43f1ab88e52751ed21b0ef43b78?x-bce-process=image/resize,m_lfit,w_235,h_235,limit_1"
       alt="">

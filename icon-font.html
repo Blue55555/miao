@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    ul {
+      display: flex;
+      width: 300px;
+      border: 1px solid black;
+
+    }
+
+    li {
+      list-style-type: none;
+      padding: 10px 10px;
+    }
+
+    span::before {
+      content: '\f006';
+      font-family: FontAwesome;
+    }
+
+    ul:hover li span::before {
+      content: '\f005';
+      font-family: FontAwesome;
+    }
+
+    li:hover~li span::before {
+      content: '\f006';
+      font-family: FontAwesome;
+    }
+  </style>
+</head>
+
+<body>
+  <ul>
+    <li><span></span></li>
+    <li><span></span></li>
+    <li><span></span></li>
+    <li><span></span></li>
+    <li><span></span></li>
+  </ul>
+</body>
+
+</html>

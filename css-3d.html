@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+
+    }
+
+    ul {
+      transform-style: preserve-3d;
+      margin: 200px auto;
+      width: 500px;
+      height: 500px;
+      position: relative;
+      animation-name: zhuan;
+      animation-duration: 10s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+    }
+
+    .square {
+      width: 500px;
+      height: 500px;
+      position: absolute;
+
+    }
+
+    .positive {
+      top: 0;
+      left: 0;
+      transform: translateZ(250px);
+      background-color: blue;
+    }
+
+    .back {
+      top: 0;
+      left: 0;
+      transform: translateZ(-250px);
+      background-color: red;
+    }
+
+    .left {
+      top: 0;
+      left: -50%;
+      transform: rotateY(90deg);
+      background-color: yellow;
+    }
+
+    .right {
+      top: 0;
+      right: -50%;
+      transform: rotateY(90deg);
+      background-color: green;
+    }
+
+    .up {
+      top: -50%;
+      left: 0;
+      transform: rotateX(90deg);
+      background-color: pink;
+    }
+
+    .down {
+      bottom: -50%;
+      left: 0;
+      transform: rotateX(90deg);
+      background-color: black;
+    }
+
+    @keyframes zhuan {
+      from {
+        transform: rotateX(0) rotateY(0);
+      }
+
+      to {
+        transform: rotateX(360deg) rotateY(360deg);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <ul>
+    <li class="square positive"></li>
+    <li class="square back"></li>
+    <li class="square left"></li>
+    <li class="square right"></li>
+    <li class="square up"></li>
+    <li class="square down"></li>
+  </ul>
+</body>
+
+</html>

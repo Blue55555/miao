@@ -410,7 +410,7 @@
   num = parseInt(num)
   console.log(n - num)
 </script>
-<script xtype="foo" id="ch0105/01">
+<script type="foo" id="ch0105/01">
   var n = +prompt()
   var age
   var sum = 0
@@ -422,17 +422,153 @@
   }
   console.log((sum / num).toFixed(2))
 </script>
-<script type="foo" id="ch0105/02"></script>
-<script type="foo" id="ch0105/03"></script>
-<script type="foo" id="ch0105/04"></script>
-<script type="foo" id="ch0105/05"></script>
-<script type="foo" id="ch0105/06"></script>
-<script type="foo" id="ch0105/07"></script>
-<script type="foo" id="ch0105/08"></script>
-<script type="foo" id="ch0105/09"></script>
-<script type="foo" id="ch0105/10"></script>
-<script type="foo" id="ch0105/11"></script>
-<script type="foo" id="ch0105/12"></script>
+<script type="foo" id="ch0105/02">
+  var sum = 0
+  var i
+  var num
+  for (i = 12; i > 0; i--) {
+    num = +prompt();
+    sum = sum + num;
+  }
+  console.log('$' + (sum / 12).toFixed(2))
+</script>
+<script type="foo" id="ch0105/03">
+  var n = +prompt()
+  var age
+  var sum = 0
+  var num = n
+  while (n > 0) {
+    age = +prompt();
+    sum = sum + age;
+    n--;
+  }
+  console.log((sum / num).toFixed(4))
+</script>
+<script type="foo" id="ch0105/04">
+  var n = +prompt()
+  var age
+  var sum = 0
+  var num = n
+  while (n > 0) {
+    age = +prompt();
+    sum = sum + age;
+    n--;
+  }
+  console.log(sum)
+  console.log((sum / num).toFixed(5))
+</script>
+<script type="foo" id="ch0105/05">
+  var n = +prompt()
+  var num
+  var max = 0
+  while (n > 0) {
+    num = +prompt();
+    if (num > max) {
+      max = num;
+    }
+    n--;
+  }
+  console.log(max)
+</script>
+<script type="foo" id="ch0105/06">
+  var n = +prompt()
+  var num
+  var max = 0
+  var min = 0
+  while (n > 0) {
+    num = +prompt();
+    if (num > max) {
+      max = num;
+    }
+    if (num < min) {
+      min = num;
+    }
+    n--;
+  }
+  console.log(max - min)
+</script>
+<script type="foo" id="ch0105/07">
+  var n = +prompt()
+  var num1
+  var num2
+  var num3
+  var sum1 = 0
+  var sum2 = 0
+  var sum3 = 0
+  while (n > 0) {
+    num1 = +prompt();
+    num2 = +prompt();
+    num3 = +prompt();
+    sum1 = sum1 + num1;
+    sum2 = sum2 + num2;
+    sum3 = sum3 + num3;
+    n--;
+  }
+  console.log(sum1, sum2, sum3, sum1 + sum2 + sum3)
+</script>
+<script type="foo" id="ch0105/08">
+  var i = +prompt()
+  var n1 = i
+  var sum = 0
+  while (i > 1) {
+    n = +prompt();
+    sum = sum + n;
+    i--;
+  }
+  console.log((n1 - 2) * 180 - sum)
+</script>
+<script type="foo" id="ch0105/09">
+  var m = +prompt()
+  var n = +prompt()
+  var i = m
+  var sum = 0
+  var num = n - m + 1
+  while (num > 0) {
+    if (i % 2 == 1) {
+      sum = sum + i;
+    }
+    i++;
+    num--;
+  }
+  console.log(sum)
+</script>
+<script type="foo" id="ch0105/10">
+  var m = +prompt()
+  var n = +prompt()
+  var i = m
+  var sum = 0
+  var num = n - m + 1
+  while (num > 0) {
+    if (i % 17 == 0) {
+      sum = sum + i;
+    }
+    i++;
+    num--;
+  }
+  console.log(sum)
+</script>
+<script type="foo" id="ch0105/11">
+  var n = +prompt()
+  var num
+  var num1 = 0
+  var num2 = 0
+  var num3 = 0
+  while (n > 0) {
+    num = +prompt();
+    if (num == 1) {
+      num1++;
+    } else if (num == 5) {
+      num2++;
+    } else if (num == 10) {
+      num3++;
+    }
+    n--;
+  }
+  console.log(num1 + '\n' + num2 + '\n' + num3 + '\n')
+</script>
+<script xtype="foo" id="ch0105/12">
+
+</script>
 <script type="foo" id="ch0105/13"></script>
 <script type="foo" id="ch0105/14"></script>
 <script type="foo" id="ch0105/15"></script>

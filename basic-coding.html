@@ -566,14 +566,74 @@
   }
   console.log(num1 + '\n' + num2 + '\n' + num3 + '\n')
 </script>
-<script xtype="foo" id="ch0105/12">
-
+<script type="foo" id="ch0105/12">
+  var n = +prompt()
+  var num
+  var num1 = +prompt()
+  var num2 = 0
+  while (n > 0) {
+    num = +prompt();
+    if (num == num1) {
+      num2++;
+    }
+    n--;
+  }
+  console.log(num2)
 </script>
-<script type="foo" id="ch0105/13"></script>
-<script type="foo" id="ch0105/14"></script>
-<script type="foo" id="ch0105/15"></script>
-<script type="foo" id="ch0105/16"></script>
-<script type="foo" id="ch0105/17"></script>
+<script type="foo" id="ch0105/13">
+  var a = +prompt()
+  var n = +prompt()
+  var num = 1
+  while (n > 0) {
+    num = num * a;
+    n--;
+  }
+  console.log(num)
+</script>
+<script type="foo" id="ch0105/14">
+  var x = +prompt()
+  var n = +prompt()
+  while (n > 0) {
+    x = x + x * 0.001;
+    n--;
+  }
+  console.log(x.toFixed(4))
+</script>
+<script type="foo" id="ch0105/15">
+  var R = +prompt()
+  var M = +prompt()
+  var Y = +prompt()
+  while (Y > 0) {
+    M = M + M * R * 0.01;
+    Y--;
+  }
+  console.log(parseInt(M))
+</script>
+<script type="foo" id="ch0105/16">
+  var N = +prompt()
+  var K = +prompt()
+  var i = 0
+  var sum = 0
+  var price = 200
+  while (i < 20) {
+    sum = sum + N;
+    i++;
+    if (sum > price) {
+      console.log(i);
+      break;
+    }
+    price = price + price * K * 0.01;
+  }
+  if (sum < price) {
+    console.log('Impossible')
+  }
+</script>
+<script xtype="foo" id="ch0105/17">
+  var k = +prompt()
+  while () {
+    sum = sum +
+  }
+</script>
 <script type="foo" id="ch0105/18"></script>
 <script type="foo" id="ch0105/19"></script>
 <script type="foo" id="ch0105/20"></script>

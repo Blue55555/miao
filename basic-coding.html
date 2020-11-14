@@ -1016,8 +1016,8 @@
   var n = +prompt()
   var isPrime = true
   var count = 0
-  var max
-  for (var x = 2; x < 10000000; x++) {
+  var max = 0
+  for (var x = 2; x < 100000; x++) {
     for (var i = 2; i < n + 2; i++) {
       if (x == 2 * i || x == 3 * i || x == 5 * i || x == 7 * i || x == 11 * i || x == 13 * i || x == 17 * i) {
         isPrime = false;

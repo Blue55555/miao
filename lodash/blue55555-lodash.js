@@ -29,11 +29,11 @@ var blue55555 = (function () {
         isNaN(arr[i])
       ) {
         arr.splice(i, 1);
+        i--;
       }
     }
     return arr;
   }
-  compact([1, NaN]);
 
   function concat(arr, ...val) {
     for (let i = 1; i < arguments.length; i++) {
@@ -48,18 +48,21 @@ var blue55555 = (function () {
     return arr;
   }
 
-  function difference(arr, val) {
-    for (let i = 0; i < arr.length; i++) {
-      for (var j in val) {
-        if (val[j] == arr[i]) {
-          arr.splice(i, 1);
-          i--;
-          break;
+  function difference(arr, ...val) {
+    for (let a = 1; a < arguments.length; a++) {
+      for (let i = 0; i < arr.length; i++) {
+        for (var j in arguments[a]) {
+          if (arguments[a][j] == arr[i]) {
+            arr.splice(i, 1);
+            i--;
+            break;
+          }
         }
       }
     }
     return arr;
   }
+  difference([1, 2, 3, 4], [1, 3], [4]);
 
   function drop(arr, n = 1) {
     arr.splice(0, n);
@@ -73,9 +76,7 @@ var blue55555 = (function () {
     return arr;
   }
 
-  function dropRightWhile() {
-    s;
-  }
+  function join(array, separator = ",") {}
 
   return {
     chunk,

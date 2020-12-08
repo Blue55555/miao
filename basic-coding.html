@@ -822,9 +822,19 @@
   }
 </script>
 <script type="foo" id="ch0105/31">
-  var N = +prompt()
-  var M = +prompt()
-  N
+  var n = +prompt()
+  var m = +prompt()
+  var isopen = true
+  for (var i = 1; i <= n; i++) {
+    for (var n = 1; n <= n; n++) {
+      i * n
+    }
+    if (i % 2 == 1) {
+      isopen = false;
+    } else {
+      isopen = true;
+    }
+  }
 </script>
 <script type="foo" id="ch0105/32">
   var k1 = +prompt()
@@ -1076,4 +1086,278 @@
     }
   }
   console.log(sum)
+</script>
+
+<script xtype="foo">
+  // sqrt: 求一个正数的平方根
+  // narcissistic: 写一个函数判断一个数是否为水仙花数
+  // narcissistics: 输出10000以内的所有水仙花数
+  // palindrom: 写函数求阶乘
+  // weekday: 给写年和月，计算这个月的第一天是星期几
+  // complete - number: 写一个函数求一个数是否为完全数（它的因子之和等于它自己）
+  // complete - numbers: 输出1000以内的所有完数
+  // prime: 判断素数
+  // primes: 输出1000以内的素数
+  // itob: 不使用隐式类型转换将一个数字转换为字符串
+  // lcf: 写函数求出两个数的最大公约数
+  // lcm: 写函数求出两个数的最小公倍数
+
+
+  var sqrt = function (n) {
+    n = Math.sqrt(n)
+    return n
+  }
+
+  var narcissistic = function (n) {
+    var digit
+    var num = 0
+    var n1 = n
+    var i
+    for (var i = 0; n > 0; i++) {
+      digit = n % 10;
+      n = (n - digit) / 10;
+      //console.log(digit);
+    }
+    for (var a = 0; n1 > 0; a++) {
+      digit = n1 % 10;
+      n1 = (n1 - digit) / 10;
+      num = num + digit ** i;
+      //console.log(num);
+    }
+    return num
+  }
+
+  var narcissistics = function () {
+    var digit
+    var num = 0
+    var i
+    for (var narnum = 0; narnum < 10000; narnum++) {
+      var n = narnum
+      var n1 = narnum
+      num = 0
+      for (var i = 0; n > 0; i++) {
+        digit = n % 10;
+        n = (n - digit) / 10;
+        //console.log(digit);
+      }
+      for (var a = 0; n1 > 0; a++) {
+        digit = n1 % 10;
+        n1 = (n1 - digit) / 10;
+        num = num + digit ** i;
+        //console.log(num);
+      }
+      if (narnum == num) {
+        console.log(num);
+      }
+    }
+  }
+
+  var palindrom = function (n) {
+    var palnum = 1
+    for (var i = 1; i <= n; i++) {
+      palnum = palnum * i;
+      //console.log(palnum);
+    }
+    return palnum
+  }
+
+  var complete_number = function (n) {
+    var num = n
+    var sum = 0
+    for (var i = 1; i <= n; i++) {
+      if (n % i == 0) {
+        sum = sum + i;
+      }
+    }
+    if (sum - n == n) {
+      return true
+    } else {
+      return false
+    }
+  }
+
+  var complete_numbers = function () {
+    var sum = 0
+    var ddd = ''
+    for (var n = 1; n <= 1000; n++) {
+      sum = 0;
+      for (var i = 1; i <= n; i++) {
+        if (n % i == 0) {
+          sum = sum + i;
+        }
+      }
+      if (sum - n == n) {
+        ddd = ddd + ' ' + n;
+        console.log(n)
+      }
+    }
+    return ddd
+  }
+
+  var prime = function (n) {
+    var sqrt_n = Math.sqrt(n)
+    var isPrime = true
+    for (var i = 2; i <= sqrt_n; i++) {
+      if (n % i == 0) {
+        isPrime = false;
+      }
+    }
+    if (isPrime == true) {
+      return true
+    } else {
+      return false
+    }
+  }
+
+  var primes = function () {
+    for (var n = 1; n <= 1000; n++) {
+      var sqrt_n = Math.sqrt(n)
+      var isPrime = true
+      for (var i = 2; i <= sqrt_n; i++) {
+        if (n % i == 0) {
+          isPrime = false;
+        }
+      }
+      if (isPrime == true) {
+        console.log(n);
+      } else {
+        var isPrime = true;
+      }
+    }
+  }
+
+  var itob = function (n) {
+    var digit
+    var result = ''
+    var undigit = 0
+    var num = 0
+    var n1 = n
+    var i
+    for (var i = 0; n > 0; i++) {
+      digit = n % 10;
+      n = (n - digit) / 10;
+      //console.log(digit);
+      undigit = undigit * 10 + digit
+      //console.log(undigit)
+    }
+    for (var a = 0; undigit > 0; a++) {
+      digit = undigit % 10;
+      undigit = (undigit - digit) / 10;
+      result = result + digit + ''
+      //console.log(result)
+    }
+    return result
+  }
+  itob(1234)
+
+  var lcf = function (x, y) {
+    var sum = 0
+    var sum1 = 0
+    var max
+    var i1
+    for (var i = 1; i <= x; i++) {
+      if (x % i == 0) {
+        //console.log(i)
+        i1 = i;
+      }
+      for (var a = 1; a <= y; a++) {
+        if (y % a == 0) {
+          //console.log(a)
+          a1 = a;
+        }
+        if (a1 == i1) {
+          max = a1;
+        }
+      }
+    }
+    return max
+  }
+
+  var lcm = function (x, y) {
+    for (var i = 1; i < x * y; i++) {
+      for (var a = 1; a < x * y; a++) {
+        if (x * a == y * i) {
+          var ddd = x * a;
+          return ddd
+        }
+      }
+    }
+  }
+  lcm(4, 5)
+
+
+
+
+
+  /**
+ * @param {number} num
+ * @return {number}
+ */
+  var addDigits = function (num) {
+    var sum = num
+    for (var n = 0; ; n++) {
+      num = sum
+      sum = 0
+      if (num == 0) {
+        return 0
+      } else {
+        for (var i = 0; num > 0; i++) {
+          digit = num % 10
+          num = (num - digit) / 10
+          sum = sum + digit
+          console.log(sum)
+        }
+        if (i == 1) {
+          return sum
+        }
+      }
+    }
+  };
+
+
+  var reverseList = function (head) {
+    if (head.next == null) {
+      return head
+    }
+    head.next = reverseList(head.next)
+  };
+
+  var reverseList = function (head) {
+    var p = head
+    let dd = { next: null }
+    let num = [head.val]
+    while (p.next != null) {
+      p = p.next
+      num.push(p)
+    }
+    var c = { next: null }
+    for (var i = num.length - 1; i > 0; i--) {
+      c.next = createNode(num[num.length - 1])
+      createNode(num[i]).next = createNode(num[i - 1])
+    }
+    return c
+  };
+  function createNode(val) {
+    return {
+      val: val,
+      next: null
+    }
+  }
+
+  var reverseList = function (head) {
+    let p = head
+    let count = 0
+    while (p.next != null) {
+      p.next.prev = p
+      p = p.next
+      count++
+    }
+    let x = p
+    for (let i = 0; i < count; i++) {
+      p.next = p.prev
+    }
+    p.next = null
+    return x
+  };
+
 </script>

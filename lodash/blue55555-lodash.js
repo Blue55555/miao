@@ -26,13 +26,14 @@ var blue55555 = (function () {
         arr[i] === null ||
         arr[i] === "" ||
         arr[i] === undefined ||
-        arr[i] === NaN
+        isNaN(arr[i])
       ) {
         arr.splice(i, 1);
       }
     }
     return arr;
   }
+  compact([1, NaN]);
 
   function concat(arr, ...val) {
     for (let i = 1; i < arguments.length; i++) {
@@ -52,19 +53,12 @@ var blue55555 = (function () {
       for (var j in val) {
         if (val[j] == arr[i]) {
           arr.splice(i, 1);
+          i--;
           break;
         }
       }
     }
     return arr;
-  }
-
-  function differenceBy(array, [values], [iteratee = _.identity]) {
-    s;
-  }
-
-  function differenceWith(arr, val, com) {
-    s;
   }
 
   function drop(arr, n = 1) {
@@ -88,5 +82,7 @@ var blue55555 = (function () {
     compact,
     concat,
     difference,
+    drop,
+    dropRight,
   };
 })();

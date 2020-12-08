@@ -1,4 +1,4 @@
-var blue55555 = function () {
+var blue55555 = (function () {
   function chunk(arr, size) {
     let result = [];
     let num = 0;
@@ -47,9 +47,46 @@ var blue55555 = function () {
     return arr;
   }
 
+  function difference(arr, val) {
+    for (let i = 0; i < arr.length; i++) {
+      for (var j in val) {
+        if (val[j] == arr[i]) {
+          arr.splice(i, 1);
+          break;
+        }
+      }
+    }
+    return arr;
+  }
+
+  function differenceBy(array, [values], [iteratee = _.identity]) {
+    s;
+  }
+
+  function differenceWith(arr, val, com) {
+    s;
+  }
+
+  function drop(arr, n = 1) {
+    arr.splice(0, n);
+    return arr;
+  }
+
+  function dropRight(arr, n = 1) {
+    for (let i = 0; i < n; i++) {
+      arr.pop();
+    }
+    return arr;
+  }
+
+  function dropRightWhile() {
+    s;
+  }
+
   return {
     chunk,
     compact,
     concat,
+    difference,
   };
-};
+}();

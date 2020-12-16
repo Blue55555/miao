@@ -1,0 +1,84 @@
+<script src="https://eloquentjavascript.net/2nd_edition/code/ancestry.js"></script>
+<script>
+  var ancestry = JSON.parse(ANCESTRY_FILE)
+
+
+  function map(ary, transform) {
+    var result = []
+    for (var i = 0; i < ary.length; i++) {
+      result.push(transform(ary[i], i, ary))
+    }
+    return result
+  }
+
+  function map(ary, transform) {
+    var result = []
+    ary.forEach((item, idx) => {
+      result.push(transform(item, idx, ary))
+    })
+    return result
+  }
+
+  function forEach(ary, action) { // action是一个函数，表达我们要对数组每一项做的事情
+    for (var i = 0; i < ary.length; i++) {
+      action(ary[i], i, ary)
+    }
+  }
+
+  function filter(ary, test) {
+    var result = []
+    for (var i = 0; i < ary.length; i++) {
+      if (test(ary[i], i, ary)) {
+        result.push(ary[i])
+      }
+    }
+    return result
+  }
+
+  function getAllMale() {
+    var result = []
+    for (var i = 0; i < ancestry.length; i++) {
+      if (ancestry[i].sex == 'm') {
+        result.push(ancestry[i])
+      }
+    }
+    return result
+  }
+
+  function getAllOlderThan50() {
+    var result = []
+    for (var i = 0; i < ancestry.length; i++) {
+      if (ancestry[i].died - ancestry[i].born > 50) {
+        result.push(ancestry[i])
+      }
+    }
+    return result
+  }
+
+
+
+  var primeList = [2, 3, 5, 7, 11, 13, 17, 19, 23];
+
+  function isPrime(n) {
+    var sn = Math.sqrt(n);
+
+    for (var i = 0; primeList[i] <= sn; i++) {
+      if (n % primeList[i] === 0) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  function countPrimes(n) {
+    var count = 1;
+    for (var i = 3; i < n; i += 2) {
+      if (isPrime(i)) {
+        primeList.push(i);
+        count++;
+      }
+    }
+    return count;
+  }
+
+</script>

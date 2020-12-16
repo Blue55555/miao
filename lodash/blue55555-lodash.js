@@ -1,4 +1,10 @@
 var blue55555 = (function () {
+  function identity(val) {
+    if (val ===) {
+
+    }
+  }
+
   function chunk(arr, size) {
     let result = [];
     let num = 0;
@@ -62,7 +68,6 @@ var blue55555 = (function () {
     }
     return arr;
   }
-  difference([1, 2, 3, 4], [1, 3], [4]);
 
   function drop(arr, n = 1) {
     arr.splice(0, n);
@@ -76,7 +81,81 @@ var blue55555 = (function () {
     return arr;
   }
 
-  function join(array, separator = ",") {}
+  function join(arr, separator = ",") {
+    let p = arr[0] + "";
+    for (let i = 1; i < arr.length; i++) {
+      p = p + separator + arr[i];
+    }
+    return p;
+  }
+
+  function last(arr) {
+    return arr[arr.length - 1];
+  }
+
+  function lastIndexOf(arr, val, fromIndex = arr.length - 1) {
+    for (let i = fromIndex; i >= 0; i--) {
+      if (arr[i] == val) {
+        return i;
+      }
+    }
+    return -1;
+  }
+
+  function fill(arr, val, start = 0, end = arr.length) {
+    for (let i = start; i < end; i++) {
+      arr[i] = val;
+    }
+    return arr;
+  }
+
+
+  function findIndex(arr, predicate = identity, fromIndex = 0) {
+    for (let i = fromIndex; i < arr.length; i++) {
+      if (predicate(arr[i], i, arr)) {
+        return i;
+      }
+    }
+    return -1;
+  }
+  var users = [
+    { 'user': 'barney', 'active': false },
+    { 'user': 'fred', 'active': false },
+    { 'user': 'pebbles', 'active': true }
+  ];
+  findIndex(users, function (o) { return o.user == 'barney'; })
+
+  function reverse(arr) {
+    let n
+    for (let i = 0; i < Math.floor(arr.length / 2); i++) {
+      n = arr[i]
+      arr[i] = arr[arr.length - i - 1]
+      arr[arr.length - 1 - i] = n
+    }
+    return arr
+  }
+
+  function sortedIndex(arr, val) {
+    for (var i = 0; i < arr.length; i++) {
+      if (arr[i] == val) {
+        return i
+      }
+      if (arr[i] < val) {
+        return i + 1
+      }
+    }
+  }
+
+  function reduce(collection, iteratee = a => a, accumulator, start = 0) {
+    if (accumulator == undefined) {
+      accumulator = collection[0]
+      start += 1
+    }
+    for (let i = start; i < collection.length; i++) {
+      accumulator = iteratee(collection[i], accumulator)
+    }
+    return accumulator
+  }
 
   return {
     chunk,
@@ -85,5 +164,12 @@ var blue55555 = (function () {
     difference,
     drop,
     dropRight,
+    join,
+    last,
+    lastIndexOf,
+    fill,
+    reverse,
+    sortedIndex,
+    reduce,
   };
 })();

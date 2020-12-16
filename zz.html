@@ -55,7 +55,384 @@
 
   var every = function (arr, test) {
     for (let i = 0; i < arr.length; i++) {
+      if (test()) {
+        asd
+      }
+    }
+  }
+
+  function treeToArray(tree, arr = [tree]) {
+    if (tree.left == null) {
+      return null
+    }
+    if (tree.right == null) {
+      return null
+    }
+    arr.push(treeToArray(tree.left))
+    arr.push(treeToArray(tree.right))
+    return arr
+  }
+
+
+  var isSameTree = function (p, q) {
+    if (!p && !q) {
+      return true
+    }
+    if (!p || !q) {
+      return false
+    }
+    if (p.val != q.val) {
+      return false
+    }
+    return (isSameTree(p.left, q.left) && isSameTree(p.right, q.right))
+  };
+
+
+  var maxDepth = function (root) {
+    if (!root) {
+      return 0
+    }
+    return Math.max(maxDepth(root.left) + 1, maxDepth(root.right) + 1)
+  };
+
+  var minDepth = function (root) {
+    if (root == null) {
+      return 0
+    }
+    if (!root.left && !root.right) {
+      return 1
+    }
+    if (root.left && root.right) {
+      return Math.min(minDepth(root.left) + 1, minDepth(root.right) + 1)
+    }
+    if (root.left && !root.right) {
+      return minDepth(root.left) + 1
+    }
+    if (!root.left && root.right) {
+      return minDepth(root.right) + 1
+    }
+  };
+
+
+  var invertTree = function (root) {
+    if (!root.left && !root.right) {
+      return root
+    }
+    if (!root) {
+      return null
+    }
+    root.left = invertTree(root.right)
+    root.right = invertTree(root.left)
+
+  };
+
+  var bi = function (root) {
+    if (root == null) {
+      return null
+    }
+    if (!root.left && !root.right) {
+      return root.val
+    }
+    if (root.left && root.right) {
+      var a = bi(root.left)
+      var b = bi(root.right)
+      a = root.val + '->' + a
+      b = root.val + '->' + b
+    }
+    if (root.left && !root.right) {
+      return minDepth(root.left) + 1
+    }
+    if (!root.left && root.right) {
+      return minDepth(root.right) + 1
+    }
+    return root.val + '->' + bi(root.left)
+  };
+
+  var binaryTreePaths = function (root) {
+    if (root == null) {
+      return 0
+    }
+    if (!root.left && !root.right) {
+      return 1
+    }
+    if (root.left && root.right) {
+      return minDepth(root.left) + 1, minDepth(root.right) + 1)
+    }
+    if (root.left && !root.right) {
+      return minDepth(root.left) + 1
+    }
+    if (!root.left && root.right) {
+      return minDepth(root.right) + 1
+    }
+  };
+
+
+
+
+
+  var a = {
+    val: 2,
+    left: null,
+    right: {
+      val: 3,
+      left: null,
+      right: {
+        val: 4,
+        left: null,
+        right: {
+          val: 5
+        }
+      }
+    }
+  }
+  splice
+
+
+  var p = preorder[0]
+  var bt = function (p, inorder) {
+    var left = []
+    var right = []
+    inorder(p, inorder)
+    for (let j = 0; j < inorder.length; j++) {
+      if (preorder[0] == inorder[j]) {
+        left = inorder.splice(0, j + 1)
+        right = inorder.splice(j + 1, inorder.length)
+        preorder[0].left = buildTree()
+        preorder[0].right = buildTree()
+        return preorder[0]
+      }
+    }
+  };
+
+  var buildTree = function (preorder, inorder) {
+    if (inorder.length == 0) {
+      return null
+    }
+    var root = createTreeNode(preorder[0])
+    var left
+    var right
+    var l
+    var r
+    for (let j = 0; j < inorder.length; j++) {
+      if (preorder[0] == inorder[j]) {
+        l = (preorder.slice(1, j + 1))
+        r = (preorder.slice(j + 1))
+        left = (inorder.slice(0, j))
+        right = (inorder.slice(j + 1))
+        root.left = buildTree(l, left)
+        root.right = buildTree(r, right)
+      }
+    }
+    return root
+  };
+  var createTreeNode = function (val) {
+    return {
+      val: val,
+      left: null,
+      right: null
+    }
+  }
+
+
+  var kthSmallest = function (root, k) {
+    if (!root) {
+      return null
+    }
+    var save = []
+    var result = []
+    while (true) {
+      while (root) {
+        save.push(root)
+        result.push(root.val)
+        root = root.left
+      }
+      if (save.length > 0) {
+        var node = save.pop()
+        root = node.right
+      } else {
+        break
+      }
+    }
+    result.sort((a, b) => { return b - a })
+    return result[k - 1]
+  };
+
+
+  var constructFromPrePost = function (pre, post) {
+    if (pre.length == 0) {
+      return null
+    }
+    var root = createTreeNode(pre[0])
+    var rootpots = post.indexOf(pre[1])
+    var preleft = pre.slice(1, rootpots + 1)
+    var preright = pre.slice(rootpots + 1)
+    post.pop()
+    var postleft = post.slice(0, rootpots + 1)
+    var postright = post.slice(rootpots + 1)
+    root.left = constructFromPrePost(preleft, postleft)
+    root.right = constructFromPrePost(preright, postright)
+    return root
+  };
+  var createTreeNode = function (val) {
+    return {
+      val: val,
+      left: null,
+      right: null
+    }
+  }
+
+
+  var buildTree = function (inorder, postorder) {
+    if (inorder.length == 0) {
+      return null
+    }
+    var root = createTreeNode(postorder.pop())
+    var rootpods = indorder.indexOf(root.val)
+    var inorderleft = inorder.slice(0, rootpods)
+    var inorderright = inorder.slice(rootpods + 1)
+    var postorderleft = postorder.slice(0, rootpods)
+    var postorderright = postorder.slice(rootpods)
+    root.left = buildTree(inorderleft, postorderleft)
+    root.right = buildTree(inorderright, postorderright)
+    return root
+  };
+
+  var levelOrder = function (root) {
+    var result = []
+    result.push(root)
+    root.left
+    root.right
+  };
+
+  var levelOrder = function (root) {
+    var row = []
+    var nextrow = []
+    row.push(root)
+    nextrow.push(root.left)
+  };
+
+  var levelOrder = function (root) {
+    const res = []
+    function traversal(root, depth) {
+      if (root !== null) {
+        if (!res[depth]) {
+          res[depth] = []
+        }
+        traversal(root.left, depth + 1)
+        res[depth].push(root.val)
+        traversal(root.right, depth + 1)
+      }
+    }
+    traversal(root, 0)
+    return res
+  }
+
+
+  var pretraversal = function (root) {
+    let res = []
+    function traversal(root) {
+      if (!root) {
+
+      }
+    }
+  }
+
+  function isArray(n) {
+    return Object.prototype.toString.call(n)
+  }
+  function isArray(n) {
+    return Object.prototype.toString.call(n)
+  }
+  isArray(1)
+
+  function forOwn(n) {
+    for (var x in n) {
+      if (Object.prototype.hasOwn(n, x)) {
+        return
+      }
 
     }
+  }
+
+
+  function f() {
+    Object.defineProperty
+  }
+
+  var protoRabbit = {
+    speak: function () {
+      console.log(this.type)
+    }
+  }
+
+  function createRabbit(type) {
+    var rb = Object.create(protoRabbit)
+    rb.type = type
+    return rb
+  }
+
+  var pa = defineProperty
+
+  function f(ary) {
+    var b = []
+    return b.concat(ary.slice(1, 5), ary.slice(ary.length - 4, ary.length - 1))
+  }
+
+  var transpose = function (A) {
+    var res = []
+    for (let i = 0; i < A[0].length; i++) {
+      for (let j = 0; j < A.length; j++) {
+        res.push([])
+        res[i].push(A[j][i])
+      }
+    }
+    return res
+  };
+
+  function colWidths(rows) {
+    return rows[0].map((cell, i) => {
+      return cell
+    })
+  }
+
+  function map(arr, func) {
+    for (var i; i < arr.length; i++) {
+      arr.func()
+    }
+  }
+
+  function concat(arr, ...val) {
+    for (let i = 1; i < arguments.length; i++) {
+      for (let j = 0; i < arguments[i].length; i++) {
+        arr.push(arguments[i])
+      }
+    }
+  }
+
+  function groupBy(array, predicate) {
+    var result = {}
+    for (let i = 0; i < array.length; i++) {
+      result[val] = array[i].predicate(val)
+    }
+    return result
+  }
+
+  function mapValues(obj, mapper) {
+    var res = {}
+    for () {
+
+    }
+
+  }
+
+  function reduce(collection, iteratee = a => a, accumulator, start = 0) {
+    if (accumulator == undefined) {
+      accumulator = collection[0]
+      start += 1
+    }
+    for (let i = start; i < collection.length; i++) {
+      accumulator = iteratee(collection[i], accumulator)
+    }
+    return accumulator
   }
 </script>

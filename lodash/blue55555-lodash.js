@@ -1,9 +1,4 @@
-var blue55555 = (function () {
-  function identity(val) {
-    if (val ===) {
-
-    }
-  }
+var blue55555 = function () {
 
   function chunk(arr, size) {
     let result = [];
@@ -118,12 +113,6 @@ var blue55555 = (function () {
     }
     return -1;
   }
-  var users = [
-    { 'user': 'barney', 'active': false },
-    { 'user': 'fred', 'active': false },
-    { 'user': 'pebbles', 'active': true }
-  ];
-  findIndex(users, function (o) { return o.user == 'barney'; })
 
   function reverse(arr) {
     let n
@@ -172,4 +161,4 @@ var blue55555 = (function () {
     sortedIndex,
     reduce,
   };
-})();
+}();

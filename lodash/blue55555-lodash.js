@@ -187,17 +187,11 @@ var blue55555 = function () {
       }
     } else {
       for (let i = fromIndex; i < collection.length; i++) {
-
-      }
-      if (Object.prototype.toString.call(collection) === "[object Array]") {
-        if (predicate in collection) {
-          return predicate
-        }
-      } else {
-        if (collection[predicate] == true) {
-          return collection[predicate]
+        if (collection[i][predicate]) {
+          return collection[i]
         }
       }
+      return undefined
     }
   }
   return {

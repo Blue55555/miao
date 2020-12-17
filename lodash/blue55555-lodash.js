@@ -146,6 +146,60 @@ var blue55555 = function () {
     return accumulator
   }
 
+  function pull(array, values) {
+    let res = []
+    for (let i = 0; i < array.length; i++) {
+      if (array[i] != values) {
+        res.push(array[i])
+      }
+    }
+    array = res
+    return array
+  }
+
+  function pullAllBy(array, values, iteratee = a => a) {
+
+  }
+
+  function find(collection, predicate = a => a, fromIndex = 0) {
+    if (typeof (predicate) === 'function') {
+      for (let i = fromIndex; i < collection.length; i++) {
+        predicate(collection[i], i, collection)
+      }
+    } else if (typeof (predicate) === 'object') {
+      for (let i = fromIndex; i < collection.length; i++) {
+        for (let key in predicate) {
+          if (collection[i][key] != predicate[key]) {
+            return undefined
+          }
+        }
+        return collection[i]
+      }
+    }
+    else if (Object.prototype.toString.call(predicate) === "[object Array]") {
+      for (let i = fromIndex; i < collection.length; i++) {
+        for (let j = 0; j < predicate.length; j++) {
+          if (!(predicate[j] in collection[i])) {
+            return undefined
+          }
+        }
+        return collection[i]
+      }
+    } else {
+      for (let i = fromIndex; i < collection.length; i++) {
+
+      }
+      if (Object.prototype.toString.call(collection) === "[object Array]") {
+        if (predicate in collection) {
+          return predicate
+        }
+      } else {
+        if (collection[predicate] == true) {
+          return collection[predicate]
+        }
+      }
+    }
+  }
   return {
     chunk,
     compact,
@@ -160,5 +214,7 @@ var blue55555 = function () {
     reverse,
     sortedIndex,
     reduce,
+    pull,
+    find,
   };
 }();
